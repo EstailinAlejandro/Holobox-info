@@ -11,15 +11,18 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class HomeController extends AbstractController
 {
 
 
-    #[Route('/', name: 'add-video', methods: "GET")]
+    #[Route('/', name: 'add-video')]
+    #[ParamConverter('post', class: 'SensioBlogBundle:Post')]
 
     public function showInsert( Video $video, Request $request, EntityManagerInterface $em): Response
     {
+        assert($video instanceof Video);
         $genre = $em->getRepository(Video::class)->findAll();
         $add = new Video();
         $form = $this->createForm(VideoType::class, $add);
@@ -39,7 +42,7 @@ class HomeController extends AbstractController
                 $destination,
                 $newFileName
             );
-            $video->setImageFile($newFileName);
+            $video->setFilename($newFileName);
             $em->persist($add);
             $em->flush();
             $this->addFlash(
