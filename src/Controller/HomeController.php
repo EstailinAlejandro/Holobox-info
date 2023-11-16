@@ -11,11 +11,12 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(BrancheRepository $brancheRepository): Response
+    public function index(//BrancheRepository $brancheRepository
+        ): Response
     {
-        $branches = $brancheRepository->findAll();
+       // $branches = $brancheRepository->findAll();
         return $this->render('home/index.html.twig', [
-            'branches' => $branches
+         //   'branches' => $branches
         ]);
     }
 }
