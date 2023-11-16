@@ -16,8 +16,8 @@ class HomeController extends AbstractController
 {
 
 
-    #[Route('/', name: 'add-video')]
-    #[IsGranted()]
+    #[Route('/', name: 'add-video', methods: "GET")]
+
     public function showInsert( Video $video, Request $request, EntityManagerInterface $em): Response
     {
         $genre = $em->getRepository(Video::class)->findAll();
