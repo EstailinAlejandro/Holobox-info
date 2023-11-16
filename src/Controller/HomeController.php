@@ -18,11 +18,8 @@ class HomeController extends AbstractController
 
 
     #[Route('/', name: 'add-video')]
-    #[ParamConverter('post', class: 'SensioBlogBundle:Post')]
-
-    public function showInsert( Video $video, Request $request, EntityManagerInterface $em): Response
+    public function showInsert(Request $request, EntityManagerInterface $em)
     {
-        assert($video instanceof Video);
         $genre = $em->getRepository(Video::class)->findAll();
         $add = new Video();
         $form = $this->createForm(VideoType::class, $add);
@@ -37,25 +34,26 @@ class HomeController extends AbstractController
             $originalFileName = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
             $newFileName = $originalFileName.'-'. uniqid().'.'.$uploadedFile->guessExtension();
 
-
             $uploadedFile->move(
                 $destination,
                 $newFileName
             );
-            $video->setFilename($newFileName);
+
+            $add->setFilename($newFileName);
+
             $em->persist($add);
             $em->flush();
+
             $this->addFlash(
                 'notice',
-                'het item is toegevoegd'
+                'Het item is toegevoegd'
             );
-            return $this->redirectToRoute('app_home');
 
+            return $this->redirectToRoute('add-video');
         }
 
         return $this->renderForm('home/index.html.twig', [
             'form' => $form
-
         ]);
     }
 }
