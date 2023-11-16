@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a29e93e4-2f8e-41d9-a4e4-1265bf0a7c8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/uploads/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20231109100452.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20231109101327.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/migrations/Version20231116094042.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/VideoController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/VideoController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Branche.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Course.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Location.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/VideoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/VideoType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/BrancheRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/CourseRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/LocationRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/video/index.html.twig" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,20 +170,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="phpunit.xml.dist" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
@@ -219,6 +200,7 @@
       <updated>1699866232035</updated>
       <workItem from="1699866234579" duration="698000" />
       <workItem from="1700129232107" duration="13000" />
+      <workItem from="1700144092853" duration="935000" />
     </task>
     <servers />
   </component>
