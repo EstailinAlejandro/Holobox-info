@@ -3,19 +3,57 @@
 namespace App\Controller;
 
 
-use App\Repository\BrancheRepository;
+use App\Entity\Video;
+use App\Form\VideoType;
+use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
-    public function index(BrancheRepository $brancheRepository): Response
+
+
+    #[Route('/', name: 'add-video')]
+    public function showInsert(Request $request, EntityManagerInterface $em)
     {
-        $branches = $brancheRepository->findAll();
-        return $this->render('home/index.html.twig', [
-            'branches' => $branches
+        $genre = $em->getRepository(Video::class)->findAll();
+        $add = new Video();
+        $form = $this->createForm(VideoType::class, $add);
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $uploadedFile = $form['filename']->getData();
+
+            $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
+
+            $originalFileName = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
+            $newFileName = $originalFileName.'-'. uniqid().'.'.$uploadedFile->guessExtension();
+
+            $uploadedFile->move(
+                $destination,
+                $newFileName
+            );
+
+            $add->setFilename($newFileName);
+
+            $em->persist($add);
+            $em->flush();
+
+            $this->addFlash(
+                'notice',
+                'Het item is toegevoegd'
+            );
+
+            return $this->redirectToRoute('add-video');
+        }
+
+        return $this->renderForm('home/index.html.twig', [
+            'form' => $form
         ]);
     }
 }
