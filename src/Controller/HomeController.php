@@ -6,21 +6,19 @@ namespace App\Controller;
 use App\Entity\Video;
 use App\Form\VideoType;
 use Doctrine\ORM\EntityManagerInterface;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class HomeController extends AbstractController
 {
 
 
     #[Route('/', name: 'add-video')]
-    public function showInsert(Request $request, EntityManagerInterface $em)
+    public function showInsert(Request $request, EntityManagerInterface $em): Response
     {
-        $genre = $em->getRepository(Video::class)->findAll();
+        $video = $em->getRepository(Video::class)->findAll();
         $add = new Video();
         $form = $this->createForm(VideoType::class, $add);
 
@@ -53,7 +51,17 @@ class HomeController extends AbstractController
         }
 
         return $this->renderForm('home/index.html.twig', [
-            'form' => $form
+            'form' => $form,
+            'video'=> $video,
+        ]);
+    }
+    #[Route('/videos', name: 'showVideos')]
+    public function showVideos(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $objects = $entityManager->getRepository(Video::class)->findAll();
+
+        return $this->render('home/select.html.twig', [
+            'files' => $objects
         ]);
     }
 }
