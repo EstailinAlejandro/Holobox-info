@@ -60,8 +60,8 @@ class HomeController extends AbstractController
     {
         $objects = $entityManager->getRepository(Video::class)->findAll();
 
-        return $this->renderForm('home/select.html.twig', [
-            'form' => $objects
+        return $this->render('home/select.html.twig', [
+            'files' => $objects
         ]);
     }
 }
