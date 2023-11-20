@@ -5,6 +5,7 @@ namespace App\Controller;
 
 use App\Entity\Video;
 use App\Form\VideoType;
+use App\Repository\VideoRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -55,6 +56,44 @@ class HomeController extends AbstractController
             'video'=> $video,
         ]);
     }
+
+//    #[Route('/delete', name: 'app_delete')]
+//    public function deletee(VideoRepository $videoRepository,Video $videos): Response
+//    {
+//        $videoRepository->remove($videos);
+//
+//        $videos = $videoRepository->findAll();
+//        $this->addFlash('delete','Uw video is verwijderd');
+//        return $this->render('home/delete.html.twig', [
+//            'files' => $videos
+//        ]);
+//    }
+
+
+    #[Route('/delete/{id}', name: 'delete')]
+    public function delete(VideoRepository $videoRepository,Video $videos): Response
+    {
+        $videoRepository->remove($videos);
+
+        $videos = $videoRepository->findAll();
+        $this->addFlash('danger','Uw video is verwijderd');
+        return $this->render('home/delete.html.twig', [
+            'files' => $videos
+        ]);
+    }
+
+    #[Route('/videos2', name: 'showVideos2')]
+    public function showVideos2(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $objects = $entityManager->getRepository(Video::class)->findAll();
+
+        return $this->render('home/delete.html.twig', [
+            'files' => $objects
+        ]);
+    }
+
+
+
     #[Route('/videos', name: 'showVideos')]
     public function showVideos(Request $request, EntityManagerInterface $entityManager): Response
     {
