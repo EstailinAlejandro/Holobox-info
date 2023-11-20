@@ -55,4 +55,13 @@ class HomeController extends AbstractController
             'video'=> $video,
         ]);
     }
+    #[Route('/videos', name: 'showVideos')]
+    public function showVideos(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $objects = $entityManager->getRepository(Video::class)->findAll();
+
+        return $this->render('home/select.html.twig', [
+            'files' => $objects
+        ]);
+    }
 }

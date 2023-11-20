@@ -6,13 +6,12 @@
 
 
 <body>
-{% for videos in video %}
-{% endfor %}
+
 <div class="container-fluid">
     {{ form(form) }}
 </div>
 
-<button type="button" class="btn btn-primary"><a href="select.html.twig">kies de bestanden</a></button>
+<a href="{{ path('showVideos') }}">kies de bestanden></a>
 
 </body>
 
