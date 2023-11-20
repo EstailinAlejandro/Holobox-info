@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% for file in files %}
+        {{ file.id }} - {{ file.filename }}<br>
+
+        <video width="320" height="240" controls>
+            <source src="uploads/{{ file.filename }}" type="video/mp4">
+
+            Your browser does not support the video tag.
+        </video>
+    {% endfor %}
+
+{% endblock %}
