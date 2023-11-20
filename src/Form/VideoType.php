@@ -16,7 +16,7 @@ class VideoType extends AbstractType
         $builder
             ->add('filename', FileType::class, [
                 'mapped'=> false])
-            ->add('data')
+            ->add('name')
             ->add('submit', SubmitType::class)
         ;
     }
