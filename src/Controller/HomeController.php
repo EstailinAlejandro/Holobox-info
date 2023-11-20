@@ -76,7 +76,7 @@ class HomeController extends AbstractController
         $videoRepository->remove($videos);
 
         $videos = $videoRepository->findAll();
-        $this->addFlash('delete','Uw video is verwijderd');
+        $this->addFlash('danger','Uw video is verwijderd');
         return $this->render('home/delete.html.twig', [
             'files' => $videos
         ]);

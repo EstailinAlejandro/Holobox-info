@@ -3,8 +3,19 @@
 {% block title %}Delete{% endblock %}
 
 
+
 {% block body %}
 
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}" role="alert">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+   
+
+    </div>
     {% for file in files %}
         {{ file.id }} - {{ file.filename }}
         <a href="{{ path('delete', {'id': file.id}) }}"
