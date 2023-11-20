@@ -13,15 +13,33 @@
             </div>
         {% endfor %}
     {% endfor %}
-   
 
-    </div>
+
+    <table class="table">
+    <thead>
+    <tr>
+        <th scope="col">name</th>
+        <th scope="col">filename</th>
+    </tr>
+    </thead>
+
+    <tbody>
     {% for file in files %}
-        {{ file.id }} - {{ file.filename }}
-        <a href="{{ path('delete', {'id': file.id}) }}"
-           onclick="return confirm('Weet je zeker dat je dit product wilt verwijderen?')"><button class="btn btn-danger">Verwijder</button></a><br>
+        <tr>
+            <td>{{ file.name  }}</td>
+            <td>{{ file.filename }}</td>
+            <td><a href="{{ path('OnlyVideo', {'id': file.id}) }} ">
+                    <button class="btn btn-warning">Zie video</button></a></td>
+            <td><a href="{{ path('delete', {'id': file.id}) }} "  onclick="return confirm('Weet je zeker dat je dit product wilt verwijderen?')">
+                    <button class="btn btn-danger">Verwijderen</button></a></td>
 
 
+        </tr>
     {% endfor %}
+
+
+
+
+
 
 {% endblock %}

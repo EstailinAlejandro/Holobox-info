@@ -15,7 +15,9 @@ class VideoType extends AbstractType
     {
         $builder
             ->add('filename', FileType::class, [
-                'mapped'=> false])
+                'mapped'=> false,
+              //  'maxSize' => '40M'
+                ])
             ->add('name')
             ->add('submit', SubmitType::class)
         ;

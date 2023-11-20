@@ -44,7 +44,7 @@ class HomeController extends AbstractController
             $em->flush();
 
             $this->addFlash(
-                'notice',
+                'success',
                 'Het item is toegevoegd'
             );
 
@@ -81,6 +81,23 @@ class HomeController extends AbstractController
             'files' => $videos
         ]);
     }
+
+    #[Route('/Show1video/{id}', name: 'OnlyVideo')]
+    public function OnlyVideo(Request $request, EntityManagerInterface $entityManager, int $id)
+    {
+
+        if ($id !== null) {
+            $objects = $entityManager->getRepository(Video::class)->find($id);
+
+            return $this->render('home/show.html.twig', [
+                'files' => $objects
+            ]);
+        }
+
+
+        return new Response('No video ID provided.');
+    }
+
 
     #[Route('/videos2', name: 'showVideos2')]
     public function showVideos2(Request $request, EntityManagerInterface $entityManager): Response
