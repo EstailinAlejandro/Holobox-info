@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Delete{% endblock %}
+
+
+{% block body %}
+
+    {% for file in files %}
+        {{ file.id }} - {{ file.filename }}
+        <a href="{{ path('delete', {'id': file.id}) }}"
+           onclick="return confirm('Weet je zeker dat je dit product wilt verwijderen?')"><button class="btn btn-danger">Verwijder</button></a><br>
+
+
+    {% endfor %}
+
+{% endblock %}
