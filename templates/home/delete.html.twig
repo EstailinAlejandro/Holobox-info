@@ -30,7 +30,7 @@
             <td>{{ file.filename }}</td>
             <td><a href="{{ path('OnlyVideo', {'id': file.id}) }} ">
                     <button class="btn btn-warning">Zie video</button></a></td>
-            <td><a href="{{ path('delete', {'id': file.id}) }} "  onclick="return confirm('Weet je zeker dat je dit product wilt verwijderen?')">
+            <td><a href="{{ path('delete', {'id': file.id}) }} "  onclick="return confirm('Weet u zeker dat u \<{{ file.name }}\> wilt verwijderen?')">
                     <button class="btn btn-danger">Verwijderen</button></a></td>
 
 
