@@ -1,15 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+    <div class="container">
+        <div class=""></div>
     {% for file in files %}
-        {{ file.id }} - {{ file.filename }}<br>
+        <div class="card rounded-0" style="width: 18rem; border: none">
+            <video class="" controls>
+                <source src="uploads/{{ file.filename }}" type="video/mp4">
 
-        <video width="320" height="240" controls>
-            <source src="uploads/{{ file.filename }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+                <h5 class="card-title">{{ file.name}}</h5>
+                <a href="#" class="btn btn-dark">Zie video</a>
+            </div>
+        </div>
 
-            Your browser does not support the video tag.
-        </video>
+
     {% endfor %}
+    </div>
 
+    <div class="cta-image-block__content-wrapper ">
+        <div class="cta-image-block__content">
+            <h3 class="cta-image-block__title">Medewerker ICT support</h3>
+            <span class="cta-image-block__subtitle">Niveau 2, bol</span>
+            <a class="cta-simple-right" href="/alle-opleidingen/medewerker-ict-support">Meer over deze opleiding</a>
+        </div>
+    </div>
 {% endblock %}
