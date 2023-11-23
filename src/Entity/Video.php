@@ -17,8 +17,13 @@ class Video
     #[ORM\Column(length: 255)]
     private ?string $filename = null;
 
-    #[ORM\Column(type: Types::BLOB)]
-    private $data = null;
+    #[ORM\Column(length: 255)]
+    private ?string $name = null;
+
+    #[ORM\ManyToOne(inversedBy: 'videos')]
+    private ?Course $Course = null;
+
+
 
     public function getId(): ?int
     {
@@ -37,15 +42,29 @@ class Video
         return $this;
     }
 
-    public function getData()
+    public function getName(): ?string
     {
-        return $this->data;
+        return $this->name;
     }
 
-    public function setData($data): static
+    public function setName(string $name): static
     {
-        $this->data = $data;
+        $this->name = $name;
 
         return $this;
     }
+
+    public function getCourse(): ?Course
+    {
+        return $this->Course;
+    }
+
+    public function setCourse(?Course $Course): static
+    {
+        $this->Course = $Course;
+
+        return $this;
+    }
+
+
 }
