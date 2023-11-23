@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 
+use App\Entity\Branche;
+use App\Entity\Course;
 use App\Entity\Video;
 use App\Form\VideoType;
 use App\Repository\VideoRepository;
@@ -120,6 +122,27 @@ class HomeController extends AbstractController
 
         return $this->render('home/select.html.twig', [
             'files' => $objects
+        ]);
+    }
+
+    #[Route('/branches', name: 'branches')]
+    public function branches(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $objects = $entityManager->getRepository(Branche::class)->findAll();
+
+        return $this->render('home/branches.html.twig', [
+            'branches' => $objects
+        ]);
+    }
+
+    #[Route('/courses/{id}', name: 'courses')]
+    public function courses(Request $request, EntityManagerInterface $entityManager, int $id): Response
+    {
+
+        $branch = $entityManager->getRepository(Branche::class)->find($id);
+
+        return $this->render('home/courses.html.twig', [
+            'branch' => $branch
         ]);
     }
 }
