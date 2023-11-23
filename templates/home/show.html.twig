@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class=""></div>
+
+
+
+        <div class="card rounded-0" style="width: 225px; border: none">
+            <video class="" controls>
+                <source src="{{ path('OnlyVideo', {'id': files.id}) }}" type="video/mp4">>
+
+                Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+                <h5 class="card-title">{{ files.name}}</h5>
+                <a href="#" class="btn btn-dark">Zie video</a>
+            </div>
+        </div>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container-fluid">
+
+        <div class="container mt-5 align-items-center">
+
+        <div class="row row-cols-12 bg-primary ">
+
+    {% for branche in branches %}
+    <div class="col-3">
+
+        <a class="text-decoration-none" href="{{ path('courses', {'id': branche.id}) }}">
+        <div class="card rounded-0 " style=" border: none; background-color: #5eb5e0 ">
+            <img class="card-img-top rounded-0" src="img/kapper.jpg" alt="">
+            <div class="card-body">
+                <h4 class="card-title">{{ branche.name }}</h4>
+                <p class="card-title">Niveau 2, bol</p>
+                <button class="btn btn-dark text-start d-flex align-items-center">
+                    <span class="ps-1 ">Zie video <br> van opleiding</span>
+                    <i class="bi bi-arrow-right-short ms-auto ps-5"></i></button>
+            </div>
+        </div>
+        </a>
+    </div>
+    {% endfor %}
+        </div>
+        </div>
+    </div>
+
+
+
+    {#<div class="cta-image-block cta-image-block--color-blue" style="background: url('img/kapper.jpg&height=300');">#}
+
+{#    <div class="cta-image-block__content-wrapper ">#}
+{#        <div class="cta-image-block__content">#}
+{#            <h3 class="cta-image-block__title">Medewerker ICT support</h3>#}
+{#            <span class="cta-image-block__subtitle">Niveau 2, bol</span>#}
+{#            <a class="btn btn-dark text-start d-flex align-items-center" href="#">#}
+{#                <span class="ps-1 pe-3">Zie video <br> van opleiding</span>#}
+{#                <i class="bi bi-arrow-right-short ms-auto"></i></a>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+
+
+
+
+
+
+{% endblock %}
