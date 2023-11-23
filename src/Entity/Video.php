@@ -20,6 +20,9 @@ class Video
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
+    #[ORM\ManyToOne(inversedBy: 'videos')]
+    private ?Course $Course = null;
+
 
 
     public function getId(): ?int
@@ -47,6 +50,18 @@ class Video
     public function setName(string $name): static
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getCourse(): ?Course
+    {
+        return $this->Course;
+    }
+
+    public function setCourse(?Course $Course): static
+    {
+        $this->Course = $Course;
 
         return $this;
     }

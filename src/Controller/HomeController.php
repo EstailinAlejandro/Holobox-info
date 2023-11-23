@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 
+use App\Entity\Branche;
+use App\Entity\Course;
 use App\Entity\Video;
 use App\Form\VideoType;
 use App\Repository\VideoRepository;
@@ -16,8 +18,15 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
 
+    #[Route('/', name: 'home')]
+    public function Home() {
+        return $this->render('home/home.html.twig',
 
-    #[Route('/', name: 'add-video')]
+        );
+
+    }
+
+    #[Route('/addvideo', name: 'add-video')]
     public function showInsert(Request $request, EntityManagerInterface $em): Response
     {
         $video = $em->getRepository(Video::class)->findAll();
@@ -58,17 +67,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-//    #[Route('/delete', name: 'app_delete')]
-//    public function deletee(VideoRepository $videoRepository,Video $videos): Response
-//    {
-//        $videoRepository->remove($videos);
-//
-//        $videos = $videoRepository->findAll();
-//        $this->addFlash('delete','Uw video is verwijderd');
-//        return $this->render('home/delete.html.twig', [
-//            'files' => $videos
-//        ]);
-//    }
+
 
 
     #[Route('/delete/{id}', name: 'delete')]
@@ -123,6 +122,27 @@ class HomeController extends AbstractController
 
         return $this->render('home/select.html.twig', [
             'files' => $objects
+        ]);
+    }
+
+    #[Route('/branches', name: 'branches')]
+    public function branches(Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $objects = $entityManager->getRepository(Branche::class)->findAll();
+
+        return $this->render('home/branches.html.twig', [
+            'branches' => $objects
+        ]);
+    }
+
+    #[Route('/courses/{id}', name: 'courses')]
+    public function courses(Request $request, EntityManagerInterface $entityManager, int $id): Response
+    {
+
+        $branch = $entityManager->getRepository(Branche::class)->find($id);
+
+        return $this->render('home/courses.html.twig', [
+            'branch' => $branch
         ]);
     }
 }
