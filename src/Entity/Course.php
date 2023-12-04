@@ -24,6 +24,9 @@ class Course
     #[ORM\OneToMany(mappedBy: 'Course', targetEntity: Video::class)]
     private Collection $videos;
 
+    #[ORM\Column(length: 255)]
+    public ?string $learning_path = null;
+
     public function __construct()
     {
         $this->videos = new ArrayCollection();
@@ -84,6 +87,18 @@ class Course
                 $video->setCourse(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLearningPath(): ?string
+    {
+        return $this->learning_path;
+    }
+
+    public function setLearningPath(string $learning_path): static
+    {
+        $this->learning_path = $learning_path;
 
         return $this;
     }
