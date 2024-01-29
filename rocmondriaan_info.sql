@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 23 nov 2023 om 10:34
+-- Gegenereerd op: 29 jan 2024 om 10:42
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -53,15 +53,24 @@ DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `branch_id` int(11) DEFAULT NULL
+  `branch_id` int(11) DEFAULT NULL,
+  `learning_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `course`
 --
 
-INSERT INTO `course` (`id`, `name`, `branch_id`) VALUES
-(1, 'Medewerker ICT support', 1);
+INSERT INTO `course` (`id`, `name`, `branch_id`, `learning_path`) VALUES
+(1, 'Medewerker ICT support', 1, 'Niveau 2, bol'),
+(2, 'System & Devices', 1, 'bol 3/4'),
+(3, 'dvsdsddsaasdasd', 1, 'sdsssadsadsasa'),
+(4, 'sdasaddsasdasad', 1, 'asdsadsadsadasddsa'),
+(5, 'sadsad', 1, 'dsadasads'),
+(6, 'saddsasdasad', 1, 'asdadsdsadsa'),
+(7, 'asdadssdaasd', 1, 'saddsadsasda'),
+(8, 'sdadsaasdsad', 1, 'asdsadsaddas'),
+(9, 'baannaan', 2, 'Bol-3');
 
 -- --------------------------------------------------------
 
@@ -84,7 +93,8 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20231120121900', '2023-11-20 13:19:04', 42),
 ('DoctrineMigrations\\Version20231122084044', '2023-11-22 11:35:29', 135),
 ('DoctrineMigrations\\Version20231122084359', '2023-11-22 11:35:29', 153),
-('DoctrineMigrations\\Version20231122093133', '2023-11-22 11:35:29', 191);
+('DoctrineMigrations\\Version20231122093133', '2023-11-22 11:35:29', 191),
+('DoctrineMigrations\\Version20231129110751', '2023-11-29 12:07:57', 19);
 
 -- --------------------------------------------------------
 
@@ -125,7 +135,8 @@ INSERT INTO `video` (`id`, `filename`, `name`, `course_id`) VALUES
 (1, 'video_of_funny_cat (1080p)-655b537d5eadb.mp4', 'ccat', 1),
 (3, 'video_of_funny_cat (1080p)-655c83904ac89.mp4', 'cat3', NULL),
 (4, 'video_of_funny_cat (1080p)-655c8399c8be9.mp4', 'cat4', NULL),
-(5, 'video_of_funny_cat (1080p)-655c83a1c58aa.mp4', 'cat5', NULL);
+(5, 'video_of_funny_cat (1080p)-655c83a1c58aa.mp4', 'cat5', NULL),
+(6, '2020-04-02_04_26_53_A_single_Nacho_Cheese_Dorito_chip_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia-657af79fcdc2f.jpg', 'dolan', NULL);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -180,7 +191,7 @@ ALTER TABLE `branche`
 -- AUTO_INCREMENT voor een tabel `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT voor een tabel `messenger_messages`
@@ -192,7 +203,7 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT voor een tabel `video`
 --
 ALTER TABLE `video`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
