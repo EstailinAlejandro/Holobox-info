@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a29e93e4-2f8e-41d9-a4e4-1265bf0a7c8f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/branches.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/branches.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
