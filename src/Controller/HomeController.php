@@ -26,6 +26,7 @@ class HomeController extends AbstractController
 
     }
 
+    //Insert actie voor videos
     #[Route('/addvideo', name: 'add-video')]
     public function showInsert(Request $request, EntityManagerInterface $em): Response
     {
@@ -69,7 +70,7 @@ class HomeController extends AbstractController
 
 
 
-
+//Delete statement voor video
     #[Route('/delete/{id}', name: 'delete')]
     public function delete(VideoRepository $videoRepository,Video $videos): Response
     {
@@ -82,6 +83,7 @@ class HomeController extends AbstractController
         ]);
     }
 
+    //Met deze functie OnlyVideo toont die de video zonder twig template te gebruiken op het moment
     #[Route('/Show1video/{id}', name: 'OnlyVideo')]
     public function OnlyVideo(Request $request, EntityManagerInterface $entityManager, int $id): Response
     {
@@ -101,8 +103,18 @@ class HomeController extends AbstractController
         return $response;
     }
 
+    //Met functie showVideos3 poging om video te laten zien op twig pagina doet nu niks
+    #[Route('/videos3', name: 'showVideos3')]
+    public function showVideos3(Request $request, EntityManagerInterface $entityManager, int $course_id): Response
+    {
+        $videos = $entityManager->getRepository(Video::class)->findBy(['course' => $course_id]);
 
+        return $this->render('home/show.html.twig', [
+            'videos' => $videos,
+        ]);
+    }
 
+    //Hier laat die alle videos in een list zien en kan verwijderen
     #[Route('/videos2', name: 'showVideos2')]
     public function showVideos2(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -125,6 +137,7 @@ class HomeController extends AbstractController
         ]);
     }
 
+    //Alle Branches worden getoont
     #[Route('/branches', name: 'branches')]
     public function branches(Request $request, EntityManagerInterface $entityManager): Response
     {
@@ -135,6 +148,7 @@ class HomeController extends AbstractController
         ]);
     }
 
+    //Alle Courses worden getoond bij de behoorde Branches
     #[Route('/courses/{id}', name: 'courses')]
     public function courses(Request $request, EntityManagerInterface $entityManager, int $id): Response
     {

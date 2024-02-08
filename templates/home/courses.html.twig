@@ -2,43 +2,30 @@
 
 {% block body %}
     <div class="container-fluid">
-
-   <h1 class="text-center">{{branch.name}}</h1>
-
-    <div class="row align-items-center">
-        <div class=""></div>
-    {% for course in branch.getCourses() %}
-
-        <a class="text-decoration-none" href="{{ path('OnlyVideo', {'id': course.id}) }}">
-        <div class="card rounded-0 " style="width: 18rem; border: none; background-color: #5eb5e0 ">
-            <img class="card-img-top rounded-0" src="img/kapper.jpg" alt="">
-            <div class="card-body">
-                <h4 class="card-title">{{ course.name }}</h4>
-                <p class="card-title">Niveau 2, bol</p>
-                <button class="btn btn-dark text-start d-flex align-items-center">
-                    <span class="ps-1 ">Zie video <br> van opleiding</span>
-                    <i class="bi bi-arrow-right-short ms-auto ps-5"></i></button>
-            </div>
+        <div class="container bg-warning">
+            <h1 style="height: 10%" class="text-center text-white">{{ branch.name }}</h1>
         </div>
-        </a>
-    {% endfor %}
+
+        <div class="row row-cols-3 align-items-center mt-5 bg-danger">
+            {% for course in branch.getCourses() %}
+                <a class="text-decoration-none" href="{{ path('OnlyVideo', {'id': course.id}) }}">
+                    <div class="card rounded-0" style="width: 60%; border: none; background-color: #5eb5e0">
+                        <img class="card-img-top rounded-0" src="{{ asset('img/kapper.jpg') }}" alt="">
+                        <div class="card-body">
+                            <h4 class="card-title">{{ course.name }}</h4>
+                            <p class="card-title">{{ course.learning_path }}</p>
+                            <button class="btn btn-dark text-start d-flex align-items-center">
+                                <span class="ps-1 ">Zie video <br> van opleiding</span>
+                                <i class="bi bi-arrow-right-short ms-auto ps-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
     </div>
 
-    </div>
 
-
-    {#<div class="cta-image-block cta-image-block--color-blue" style="background: url('img/kapper.jpg&height=300');">#}
-
-{#    <div class="cta-image-block__content-wrapper ">#}
-{#        <div class="cta-image-block__content">#}
-{#            <h3 class="cta-image-block__title">Medewerker ICT support</h3>#}
-{#            <span class="cta-image-block__subtitle">Niveau 2, bol</span>#}
-{#            <a class="btn btn-dark text-start d-flex align-items-center" href="#">#}
-{#                <span class="ps-1 pe-3">Zie video <br> van opleiding</span>#}
-{#                <i class="bi bi-arrow-right-short ms-auto"></i></a>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
 
 
 

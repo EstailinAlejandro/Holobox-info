@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 09 nov 2023 om 13:10
+-- Gegenereerd op: 29 jan 2024 om 10:42
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -40,24 +40,8 @@ CREATE TABLE `branche` (
 --
 
 INSERT INTO `branche` (`id`, `name`) VALUES
-(1, 'Beauty & Hair'),
-(2, 'Business'),
-(3, 'Dutch Academy of Performing Arts'),
-(4, 'Evenementen'),
-(5, 'Facility'),
-(6, 'Fashion'),
-(7, 'Horeca'),
-(8, 'ICT'),
-(9, 'Logistics'),
-(10, 'Onderwijs'),
-(11, 'Retail'),
-(12, 'Sport en Bewegen'),
-(13, 'Taal+ school'),
-(14, 'Techniek'),
-(15, 'Toerisme en Recreatie'),
-(16, 'Veiligheid'),
-(17, 'Welzijn'),
-(18, 'Zorg');
+(1, 'ICT'),
+(2, 'Techniek\r\n');
 
 -- --------------------------------------------------------
 
@@ -68,41 +52,25 @@ INSERT INTO `branche` (`id`, `name`) VALUES
 DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course` (
   `id` int(11) NOT NULL,
-  `branche_id` int(11) DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `level` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `duration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `start` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `learningpath` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `crebonumber` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `branch_id` int(11) DEFAULT NULL,
+  `learning_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `course`
 --
 
-INSERT INTO `course` (`id`, `branche_id`, `name`, `description`, `level`, `duration`, `start`, `learningpath`, `crebonumber`) VALUES
-(1, 1, 'Kapper', 'Als kapper ontvang je de klant, je knipt, (ont)kleurt en föhnt het haar. Met jouw specialisme laat je de klant op zijn mooist zijn!\r\n\r\nAls kapper werk je in een kapsalon aan de verzorging en vormgeving van het haar van klanten. Het is een creatief beroep, waarin je veel invloed hebt op het uiterlijk van mensen. Je maakt afspraken, ontvangt klanten, adviseert over de verzorging van het haar en informeert naar de behandelingswensen. Je taken bestaan onder andere uit wassen, hoofdmassage, kleuren, knippen en föhnen. Bij de opleiding Kapper leer je in twee jaar ook allerlei kniptechnieken.\r\n\r\nTijdens de praktijklessen en salontrainingen bij ons op school oefen je alle competenties die vereist zijn voor Kapper. Je werkt regelmatig met modellen/klanten, die je zelf meebrengt. De benodigde theorie hiervoor wordt aangeboden in de praktijk- of theorielessen en via diverse (digitale) leermiddelen. Naast het omgaan met klanten, werk je nauw samen met collega’s en leidinggevenden.\r\n\r\nSociale vaardigheden zijn daarom erg belangrijk in dit beroep. Een deel van de opleiding bestaat uit beroepspraktijkvorming, zodat je de geleerde vaardigheden en theoretische kennis in de praktijk kunt oefenen. Je loopt dan ook, afhankelijk van het leerjaar, een of twee dagen stage.\r\n\r\nJe krijgt praktijklessen, waarbij je haarverzorging en haar wassen, kniptechnieken, haar kleuren, model föhnen leert. Tijdens de theorie besteden we aandacht aan hygiëne, arbeidsomstandigheden en omgaan met klanten (communicatieve en sociale vaardigheden).\r\n\r\nKeuzedelen:\r\n\r\nTijdens je opleiding maak je de keuze waar je je extra in gaat verdiepen, bijvoorbeeld imagestyling, nagelstyling en barbier.', 'Niveau 4', '1,5 tot 2 jaar', 'aug, febr', 'bbl & bol', '25641');
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `course_location`
---
-
-DROP TABLE IF EXISTS `course_location`;
-CREATE TABLE `course_location` (
-  `course_id` int(11) NOT NULL,
-  `location_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Gegevens worden geëxporteerd voor tabel `course_location`
---
-
-INSERT INTO `course_location` (`course_id`, `location_id`) VALUES
-(1, 1);
+INSERT INTO `course` (`id`, `name`, `branch_id`, `learning_path`) VALUES
+(1, 'Medewerker ICT support', 1, 'Niveau 2, bol'),
+(2, 'System & Devices', 1, 'bol 3/4'),
+(3, 'dvsdsddsaasdasd', 1, 'sdsssadsadsasa'),
+(4, 'sdasaddsasdasad', 1, 'asdsadsadsadasddsa'),
+(5, 'sadsad', 1, 'dsadasads'),
+(6, 'saddsasdasad', 1, 'asdadsdsadsa'),
+(7, 'asdadssdaasd', 1, 'saddsadsasda'),
+(8, 'sdadsaasdsad', 1, 'asdsadsaddas'),
+(9, 'baannaan', 2, 'Bol-3');
 
 -- --------------------------------------------------------
 
@@ -122,31 +90,11 @@ CREATE TABLE `doctrine_migration_versions` (
 --
 
 INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_time`) VALUES
-('DoctrineMigrations\\Version20231109100452', '2023-11-09 11:05:09', 326),
-('DoctrineMigrations\\Version20231109101327', '2023-11-09 11:13:32', 251);
-
--- --------------------------------------------------------
-
---
--- Tabelstructuur voor tabel `location`
---
-
-DROP TABLE IF EXISTS `location`;
-CREATE TABLE `location` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `level` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `duration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `start` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `learningpath` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Gegevens worden geëxporteerd voor tabel `location`
---
-
-INSERT INTO `location` (`id`, `name`, `level`, `duration`, `start`, `learningpath`) VALUES
-(1, 'Beauty, Hair & Fashion Leeghwaterplein 72', 'Niveau 2', '1,5 tot 2 jaar', 'aug, febr', 'bbl & bol');
+('DoctrineMigrations\\Version20231120121900', '2023-11-20 13:19:04', 42),
+('DoctrineMigrations\\Version20231122084044', '2023-11-22 11:35:29', 135),
+('DoctrineMigrations\\Version20231122084359', '2023-11-22 11:35:29', 153),
+('DoctrineMigrations\\Version20231122093133', '2023-11-22 11:35:29', 191),
+('DoctrineMigrations\\Version20231129110751', '2023-11-29 12:07:57', 19);
 
 -- --------------------------------------------------------
 
@@ -165,6 +113,31 @@ CREATE TABLE `messenger_messages` (
   `delivered_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `video`
+--
+
+DROP TABLE IF EXISTS `video`;
+CREATE TABLE `video` (
+  `id` int(11) NOT NULL,
+  `filename` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `course_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `video`
+--
+
+INSERT INTO `video` (`id`, `filename`, `name`, `course_id`) VALUES
+(1, 'video_of_funny_cat (1080p)-655b537d5eadb.mp4', 'ccat', 1),
+(3, 'video_of_funny_cat (1080p)-655c83904ac89.mp4', 'cat3', NULL),
+(4, 'video_of_funny_cat (1080p)-655c8399c8be9.mp4', 'cat4', NULL),
+(5, 'video_of_funny_cat (1080p)-655c83a1c58aa.mp4', 'cat5', NULL),
+(6, '2020-04-02_04_26_53_A_single_Nacho_Cheese_Dorito_chip_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia-657af79fcdc2f.jpg', 'dolan', NULL);
+
 --
 -- Indexen voor geëxporteerde tabellen
 --
@@ -180,27 +153,13 @@ ALTER TABLE `branche`
 --
 ALTER TABLE `course`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `IDX_169E6FB99DDF9A9E` (`branche_id`);
-
---
--- Indexen voor tabel `course_location`
---
-ALTER TABLE `course_location`
-  ADD PRIMARY KEY (`course_id`,`location_id`),
-  ADD KEY `IDX_F72AE49D591CC992` (`course_id`),
-  ADD KEY `IDX_F72AE49D64D218E` (`location_id`);
+  ADD KEY `IDX_169E6FB9DCD6CC49` (`branch_id`);
 
 --
 -- Indexen voor tabel `doctrine_migration_versions`
 --
 ALTER TABLE `doctrine_migration_versions`
   ADD PRIMARY KEY (`version`);
-
---
--- Indexen voor tabel `location`
---
-ALTER TABLE `location`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexen voor tabel `messenger_messages`
@@ -212,6 +171,13 @@ ALTER TABLE `messenger_messages`
   ADD KEY `IDX_75EA56E016BA31DB` (`delivered_at`);
 
 --
+-- Indexen voor tabel `video`
+--
+ALTER TABLE `video`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_7CC7DA2C591CC992` (`course_id`);
+
+--
 -- AUTO_INCREMENT voor geëxporteerde tabellen
 --
 
@@ -219,25 +185,25 @@ ALTER TABLE `messenger_messages`
 -- AUTO_INCREMENT voor een tabel `branche`
 --
 ALTER TABLE `branche`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT voor een tabel `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT voor een tabel `location`
---
-ALTER TABLE `location`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT voor een tabel `messenger_messages`
 --
 ALTER TABLE `messenger_messages`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT voor een tabel `video`
+--
+ALTER TABLE `video`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
@@ -247,14 +213,13 @@ ALTER TABLE `messenger_messages`
 -- Beperkingen voor tabel `course`
 --
 ALTER TABLE `course`
-  ADD CONSTRAINT `FK_169E6FB99DDF9A9E` FOREIGN KEY (`branche_id`) REFERENCES `branche` (`id`);
+  ADD CONSTRAINT `FK_169E6FB9DCD6CC49` FOREIGN KEY (`branch_id`) REFERENCES `branche` (`id`);
 
 --
--- Beperkingen voor tabel `course_location`
+-- Beperkingen voor tabel `video`
 --
-ALTER TABLE `course_location`
-  ADD CONSTRAINT `FK_F72AE49D591CC992` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `FK_F72AE49D64D218E` FOREIGN KEY (`location_id`) REFERENCES `location` (`id`) ON DELETE CASCADE;
+ALTER TABLE `video`
+  ADD CONSTRAINT `FK_7CC7DA2C591CC992` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
