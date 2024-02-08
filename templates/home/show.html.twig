@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <div class="card rounded-0" style="border: none;">
+            <video id="myVideo" class="card-img-top" controls style="width: 100%; height: auto;">
+                <source src="{{ asset('uploads/' ~ video.filename) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="card-body">
+                <h5 class="card-title">{{ video.name }}</h5>
+                <a href="#" class="btn btn-dark">Zie video</a>
+            </div>
+        </div>
+    </div>
+
+    <p class="text-white bg-danger">dsaasdasdasdasd</p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var video = document.getElementById('myVideo');
+
+            video.addEventListener('ended', function() {
+                // Wacht 5 seconden (5000 milliseconden) voordat je doorstuurt
+                setTimeout(function() {
+                    window.location.href = "{{ path('branches') }}";
+                }, 5000);
+            });
+        });
+    </script>
+{% endblock %}
