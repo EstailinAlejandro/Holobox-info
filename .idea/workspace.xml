@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="a29e93e4-2f8e-41d9-a4e4-1265bf0a7c8f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/home/branches.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/branches.html.twig" afterDir="false" />
-    </list>
-=======
-    <list default="true" id="a29e93e4-2f8e-41d9-a4e4-1265bf0a7c8f" name="Changes" comment="" />
->>>>>>> Stashed changes
+
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -244,8 +238,7 @@
       <workItem from="1705313742044" duration="641000" />
       <workItem from="1706187486749" duration="661000" />
       <workItem from="1706259216027" duration="1207000" />
-<<<<<<< Updated upstream
-=======
+
       <workItem from="1706699420163" duration="2741000" />
       <workItem from="1706775853379" duration="8362000" />
       <workItem from="1706863914146" duration="3948000" />
@@ -253,8 +246,7 @@
       <workItem from="1707218669915" duration="3485000" />
       <workItem from="1707292867426" duration="6286000" />
       <workItem from="1707382477878" duration="1422000" />
-      <workItem from="1707387236533" duration="15000" />
->>>>>>> Stashed changes
+
     </task>
     <servers />
   </component>
