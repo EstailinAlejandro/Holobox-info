@@ -27,6 +27,15 @@ class Course
     #[ORM\Column(length: 255)]
     public ?string $learning_path = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $niveau = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $durence = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $start = null;
+
     public function __construct()
     {
         $this->videos = new ArrayCollection();
@@ -99,6 +108,42 @@ class Course
     public function setLearningPath(string $learning_path): static
     {
         $this->learning_path = $learning_path;
+
+        return $this;
+    }
+
+    public function getNiveau(): ?string
+    {
+        return $this->niveau;
+    }
+
+    public function setNiveau(string $niveau): static
+    {
+        $this->niveau = $niveau;
+
+        return $this;
+    }
+
+    public function getDurence(): ?string
+    {
+        return $this->durence;
+    }
+
+    public function setDurence(string $durence): static
+    {
+        $this->durence = $durence;
+
+        return $this;
+    }
+
+    public function getStart(): ?string
+    {
+        return $this->start;
+    }
+
+    public function setStart(string $start): static
+    {
+        $this->start = $start;
 
         return $this;
     }
