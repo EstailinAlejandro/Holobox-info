@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="a29e93e4-2f8e-41d9-a4e4-1265bf0a7c8f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/branches.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/branches.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rocmondriaan_info.sql" beforeDir="false" afterPath="$PROJECT_DIR$/rocmondriaan_info.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Branche.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branche.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Course.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,6 +250,8 @@
       <workItem from="1707218669915" duration="3485000" />
       <workItem from="1707292867426" duration="6286000" />
       <workItem from="1707382477878" duration="1422000" />
+      <workItem from="1707465764431" duration="2615000" />
+      <workItem from="1707725582868" duration="2372000" />
     </task>
     <servers />
   </component>
