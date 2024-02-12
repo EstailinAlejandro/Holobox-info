@@ -21,6 +21,9 @@ class Branche
     #[ORM\OneToMany(mappedBy: 'branch', targetEntity: Course::class)]
     private Collection $courses;
 
+    #[ORM\Column(length: 255)]
+    private ?string $img = null;
+
     public function __construct()
     {
         $this->courses = new ArrayCollection();
@@ -69,6 +72,18 @@ class Branche
                 $course->setBranch(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(string $img): static
+    {
+        $this->img = $img;
 
         return $this;
     }

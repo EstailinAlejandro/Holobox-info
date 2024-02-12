@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 29 jan 2024 om 10:42
+-- Gegenereerd op: 12 feb 2024 om 11:14
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 8.1.6
 
@@ -32,16 +32,17 @@ USE `rocmondriaan_info`;
 DROP TABLE IF EXISTS `branche`;
 CREATE TABLE `branche` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `branche`
 --
 
-INSERT INTO `branche` (`id`, `name`) VALUES
-(1, 'ICT'),
-(2, 'Techniek\r\n');
+INSERT INTO `branche` (`id`, `name`, `img`) VALUES
+(1, 'ICT', ''),
+(2, 'Techniek\r\n', '');
 
 -- --------------------------------------------------------
 
@@ -53,24 +54,27 @@ DROP TABLE IF EXISTS `course`;
 CREATE TABLE `course` (
   `id` int(11) NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `branch_id` int(11) DEFAULT NULL,
-  `learning_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `learning_path` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `niveau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `durence` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `start` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `branch_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `course`
 --
 
-INSERT INTO `course` (`id`, `name`, `branch_id`, `learning_path`) VALUES
-(1, 'Medewerker ICT support', 1, 'Niveau 2, bol'),
-(2, 'System & Devices', 1, 'bol 3/4'),
-(3, 'dvsdsddsaasdasd', 1, 'sdsssadsadsasa'),
-(4, 'sdasaddsasdasad', 1, 'asdsadsadsadasddsa'),
-(5, 'sadsad', 1, 'dsadasads'),
-(6, 'saddsasdasad', 1, 'asdadsdsadsa'),
-(7, 'asdadssdaasd', 1, 'saddsadsasda'),
-(8, 'sdadsaasdsad', 1, 'asdsadsaddas'),
-(9, 'baannaan', 2, 'Bol-3');
+INSERT INTO `course` (`id`, `name`, `learning_path`, `niveau`, `durence`, `start`, `branch_id`) VALUES
+(1, 'Medewerker ICT support', 'Niveau 2, bol', '', '', '', 1),
+(2, 'System & Devices', 'bol 3/4', '', '', '', 1),
+(3, 'dvsdsddsaasdasd', 'sdsssadsadsasa', '', '', '', 1),
+(4, 'sdasaddsasdasad', 'asdsadsadsadasddsa', '', '', '', 1),
+(5, 'sadsad', 'dsadasads', '', '', '', 1),
+(6, 'saddsasdasad', 'asdadsdsadsa', '', '', '', 1),
+(7, 'asdadssdaasd', 'saddsadsasda', '', '', '', 1),
+(8, 'sdadsaasdsad', 'asdsadsaddas', '', '', '', 1),
+(9, 'baannaan', 'Bol-3', '', '', '', 2);
 
 -- --------------------------------------------------------
 
@@ -94,7 +98,8 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20231122084044', '2023-11-22 11:35:29', 135),
 ('DoctrineMigrations\\Version20231122084359', '2023-11-22 11:35:29', 153),
 ('DoctrineMigrations\\Version20231122093133', '2023-11-22 11:35:29', 191),
-('DoctrineMigrations\\Version20231129110751', '2023-11-29 12:07:57', 19);
+('DoctrineMigrations\\Version20231129110751', '2023-11-29 12:07:57', 19),
+('DoctrineMigrations\\Version20240212091929', '2024-02-12 11:09:20', 109);
 
 -- --------------------------------------------------------
 
