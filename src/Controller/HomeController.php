@@ -27,7 +27,7 @@ class HomeController extends AbstractController
     }
 
     //Insert actie voor videos
-    #[Route('/addvideo', name: 'add-video')]
+                #[Route('/addvideo', name: 'add-video')]
     public function showInsert(Request $request, EntityManagerInterface $em): Response
     {
         $video = $em->getRepository(Video::class)->findAll();
@@ -93,14 +93,16 @@ class HomeController extends AbstractController
             throw $this->createNotFoundException('Video not found');
         }
 
-        // Assume Video entity has a method to get the file path, adjust accordingly
-        $videoPath = $this->getParameter('kernel.project_dir') . '/public/uploads/' . $video->getFilename();
+//        // Assume Video entity has a method to get the file path, adjust accordingly
+//        $videoPath = $this->getParameter('kernel.project_dir') . '/public/uploads/' . $video->getFilename();
+//
+//        // Create a BinaryFileResponse to serve the video
+//        $response = new BinaryFileResponse($videoPath);
+//        $response->headers->set('Content-Type', 'video/mp4');
 
-        // Create a BinaryFileResponse to serve the video
-        $response = new BinaryFileResponse($videoPath);
-        $response->headers->set('Content-Type', 'video/mp4');
-
-        return $response;
+        return $this->render('home/show.html.twig', [
+            'video' => $video,
+        ]);
     }
 
     //Met functie showVideos3 poging om video te laten zien op twig pagina doet nu niks
@@ -148,6 +150,8 @@ class HomeController extends AbstractController
         ]);
     }
 
+
+
     //Alle Courses worden getoond bij de behoorde Branches
     #[Route('/courses/{id}', name: 'courses')]
     public function courses(Request $request, EntityManagerInterface $entityManager, int $id): Response
@@ -159,4 +163,6 @@ class HomeController extends AbstractController
             'branch' => $branch
         ]);
     }
+
+
 }

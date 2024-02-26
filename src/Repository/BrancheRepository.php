@@ -21,6 +21,24 @@ class BrancheRepository extends ServiceEntityRepository
         parent::__construct($registry, Branche::class);
     }
 
+    public function save(Branche $entity, bool $flush = true): void
+    {
+        $this->getEntityManager()->persist($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
+    public function remove(Branche $entity, bool $flush = true): void
+    {
+        $this->getEntityManager()->remove($entity);
+
+        if ($flush) {
+            $this->getEntityManager()->flush();
+        }
+    }
+
 //    /**
 //     * @return Branche[] Returns an array of Branche objects
 //     */

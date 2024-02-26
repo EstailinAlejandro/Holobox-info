@@ -5,10 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a29e93e4-2f8e-41d9-a4e4-1265bf0a7c8f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/templates/branche/insert.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rocmondriaan_info.sql" beforeDir="false" afterPath="$PROJECT_DIR$/rocmondriaan_info.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Branche.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Branche.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Course.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/uploads/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/VideoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/VideoType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BrancheRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BrancheRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/CourseRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/CourseRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/delete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/delete.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,24 +177,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;EsTatalun&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/SD Student/Documents/GitHub/Holobox-info/templates/home&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "EsTatalun",
+    "last_opened_file_path": "C:/Users/SD Student/Documents/GitHub/Holobox-info/templates/branche",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\SD Student\Documents\GitHub\Holobox-info\templates\branche" />
       <recent name="C:\Users\SD Student\Documents\GitHub\Holobox-info\templates\home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -251,7 +257,14 @@
       <workItem from="1707292867426" duration="6286000" />
       <workItem from="1707382477878" duration="1422000" />
       <workItem from="1707465764431" duration="2615000" />
-      <workItem from="1707725582868" duration="2372000" />
+      <workItem from="1707725582868" duration="3805000" />
+      <workItem from="1707740354615" duration="1552000" />
+      <workItem from="1707742197516" duration="886000" />
+      <workItem from="1707817685823" duration="2219000" />
+      <workItem from="1707908084215" duration="594000" />
+      <workItem from="1707993974180" duration="7282000" />
+      <workItem from="1708072384720" duration="3389000" />
+      <workItem from="1708940889134" duration="6526000" />
     </task>
     <servers />
   </component>
