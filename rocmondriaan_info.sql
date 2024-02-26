@@ -100,7 +100,6 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20231122093133', '2023-11-22 11:35:29', 191),
 ('DoctrineMigrations\\Version20231129110751', '2023-11-29 12:07:57', 19),
 ('DoctrineMigrations\\Version20240212091929', '2024-02-12 11:09:20', 109);
-
 -- --------------------------------------------------------
 
 --
@@ -142,6 +141,7 @@ INSERT INTO `video` (`id`, `filename`, `name`, `course_id`) VALUES
 (4, 'video_of_funny_cat (1080p)-655c8399c8be9.mp4', 'cat4', NULL),
 (5, 'video_of_funny_cat (1080p)-655c83a1c58aa.mp4', 'cat5', NULL),
 (6, '2020-04-02_04_26_53_A_single_Nacho_Cheese_Dorito_chip_in_the_Franklin_Farm_section_of_Oak_Hill,_Fairfax_County,_Virginia-657af79fcdc2f.jpg', 'dolan', NULL);
+(5, 'video_of_funny_cat (1080p)-655c83a1c58aa.mp4', 'cat5', NULL);
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -197,6 +197,7 @@ ALTER TABLE `branche`
 --
 ALTER TABLE `course`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT voor een tabel `messenger_messages`
@@ -209,6 +210,7 @@ ALTER TABLE `messenger_messages`
 --
 ALTER TABLE `video`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Beperkingen voor geëxporteerde tabellen
