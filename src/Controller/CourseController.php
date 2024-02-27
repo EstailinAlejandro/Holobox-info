@@ -2,62 +2,63 @@
 
 namespace App\Controller;
 
-use App\Entity\Branche;
-use App\Form\BrancheType;
-use App\Repository\BrancheRepository;
+use App\Entity\Course;
+use App\Form\CourseType;
+use App\Repository\CourseRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class BrancheController extends AbstractController
+class CourseController extends AbstractController
 {
-    #[Route('/branche', name: 'branche')]
+    #[Route('/course', name: 'course')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
 
-        $objects = $entityManager->getRepository(branche::class)->findAll();
-        return $this->render('branche/index.html.twig', [
-            'branches' => $objects,
+        $objects = $entityManager->getRepository(Course::class)->findAll();
+        return $this->render('course/index.html.twig', [
+            'courses' => $objects,
         ]);
     }
 
-    #[Route('/OnlyBranche/{id}', name: 'OnlyBranche')]
+    #[Route('/OnlyCourse/{id}', name: 'OnlyCourse')]
     public function onlyBranche(Request $request, EntityManagerInterface $entityManager, int $id): Response
     {
 
-        $objects = $entityManager->getRepository(Branche::class)->find($id);
-        return $this->render('branche/img.html.twig', [
-            'branches' => $objects,
+        $objects = $entityManager->getRepository(Course::class)->find($id);
+        return $this->render('course/img.html.twig', [
+            'courses' => $objects,
         ]);
     }
 
-    #[Route('/branche-delete/{id}', name: 'branche_delete')]
-    public function delete(Branche $branche, BrancheRepository $brancheRepository): Response
+    #[Route('/course-delete/{id}', name: 'course_delete')]
+    public function delete(Course $course, CourseRepository $courseRepository): Response
     {
-        $brancheRepository->remove($branche);
+        $courseRepository->remove($course);
 
-        $branche = $brancheRepository->findAll();
-        $this->addFlash('danger', 'Uw branche is verwijderd');
-        return $this->render('branche/index.html.twig', [
-            'branches' => $branche,
+        $course = $courseRepository->findAll();
+        $this->addFlash('danger', 'Uw course is verwijderd');
+        return $this->render('course/index.html.twig', [
+            'courses' => $course,
         ]);
     }
 
-    #[Route('/addbranche', name: 'add-branche')]
+
+    #[Route('/addcourse', name: 'add-course')]
     public function showInsert(Request $request, EntityManagerInterface $em): Response
     {
-        $video = $em->getRepository(Branche::class)->findAll();
-        $add = new Branche();
-        $form = $this->createForm(BrancheType::class, $add);
+        $video = $em->getRepository(Course::class)->findAll();
+        $add = new Course();
+        $form = $this->createForm(CourseType::class, $add);
 
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $uploadedFile = $form['img']->getData();
 
-            $destination = $this->getParameter('kernel.project_dir') . '/public/img_branche';
+            $destination = $this->getParameter('kernel.project_dir') . '/public/img_course';
 
             $originalFileName = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
             $newImg = $originalFileName . '-' . uniqid() . '.' . $uploadedFile->guessExtension();
@@ -77,7 +78,7 @@ class BrancheController extends AbstractController
                 'Het item is toegevoegd'
             );
 
-            return $this->redirectToRoute('add-video');
+            return $this->redirectToRoute('course');
         }
 
         return $this->renderForm('home/index.html.twig', [
@@ -86,5 +87,3 @@ class BrancheController extends AbstractController
         ]);
     }
 }
-
-

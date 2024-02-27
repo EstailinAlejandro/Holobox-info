@@ -28,9 +28,9 @@
             <tr>
                 <td>{{ branche.name  }}</td>
                 <td>{{ branche.img }}</td>
-                <td><a href="{{ path('OnlyVideo', {'id': branche.id}) }} ">
+                <td><a href="{{ path('OnlyBranche', {'id': branche.id}) }} ">
                         <button class="btn btn-warning">Zie afbeelding</button></a></td>
-                <td><a href="{{ path('branche_delete', {'id': branche.id}) }} "  onclick="return confirm('Weet u zeker dat u \<{{ branche.name }}\> wilt verwijderen?')">
+                <td><a href="{{ path('branche_delete', {'id': branche.id}) }} "  onclick="return confirm('Weet u zeker dat u \< <b>{{ branche.name }} </b>\> wilt verwijderen?')">
                         <button class="btn btn-danger">Verwijderen</button></a></td>
 
 
@@ -38,7 +38,7 @@
         {% endfor %}
     </table>
 
-    <a  class="mt-5" href="{{ path('add-video') }}">add video</a>
+    <a  class="mt-5" href="{{ path('add-branche') }}">add branche</a>
 
 
 

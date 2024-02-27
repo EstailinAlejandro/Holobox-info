@@ -13,28 +13,31 @@ class Course
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    public ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    public ?string $name = null;
 
     #[ORM\ManyToOne(inversedBy: 'courses')]
-    private ?Branche $branch = null;
+    public ?Branche $branch = null;
 
     #[ORM\OneToMany(mappedBy: 'Course', targetEntity: Video::class)]
-    private Collection $videos;
+    public Collection $videos;
 
     #[ORM\Column(length: 255)]
     public ?string $learning_path = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $niveau = null;
+    public ?string $niveau = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $durence = null;
+    public ?string $durence = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $start = null;
+    public ?string $start = null;
+
+    #[ORM\Column(length: 255)]
+    public ?string $img = null;
 
     public function __construct()
     {
@@ -144,6 +147,18 @@ class Course
     public function setStart(string $start): static
     {
         $this->start = $start;
+
+        return $this;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(string $img): static
+    {
+        $this->img = $img;
 
         return $this;
     }

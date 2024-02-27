@@ -8,29 +8,24 @@
 
         <div class="row row-cols-3 align-items-center mt-5 bg-danger">
             {% for course in branch.getCourses() %}
-                <a class="text-decoration-none" href="{{ path('OnlyVideo', {'id': course.id}) }}">
-                    <div class="card rounded-0" style="width: 60%; border: none; background-color: #5eb5e0">
-                        <img class="card-img-top rounded-0" src="{{ asset('img/kapper.jpg') }}" alt="">
-                        <div class="card-body">
-                            <h4 class="card-title">{{ course.name }}</h4>
-                            <p class="card-title">{{ course.learning_path }}</p>
-                            <button class="btn btn-dark text-start d-flex align-items-center">
-                                <span class="ps-1 ">Zie video <br> van opleiding</span>
-                                <i class="bi bi-arrow-right-short ms-auto ps-5"></i>
-                            </button>
+                {% set videos = course.getVideos() %}
+                {% for video in videos %}
+                    <a class="text-decoration-none" href="{{ path('OnlyVideo', {'id': video.id}) }}">
+                        <div class="card rounded-0" style="width: 60%; border: none; background-color: #5eb5e0">
+                            <img class="card-img-top rounded-0" src="{{ asset('img_course/' ~ course.img) }}" alt="">
+
+                            <div class="card-body">
+                                <h4 class="card-title">{{ course.name }}</h4>
+                                <p class="card-title">{{ course.learning_path }}</p>
+                                <button class="btn btn-dark text-start d-flex align-items-center">
+                                    <span class="ps-1 ">Zie video <br> van opleiding</span>
+                                    <i class="bi bi-arrow-right-short ms-auto ps-5"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+                {% endfor %}
             {% endfor %}
         </div>
     </div>
-
-
-
-
-
-
-
-
-
 {% endblock %}

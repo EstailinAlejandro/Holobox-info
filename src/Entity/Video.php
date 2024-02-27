@@ -12,16 +12,16 @@ class Video
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    public ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $filename = null;
+    public ?string $filename = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    public ?string $name = null;
 
     #[ORM\ManyToOne(inversedBy: 'videos')]
-    private ?Course $Course = null;
+    public ?Course $Course = null;
 
 
 
