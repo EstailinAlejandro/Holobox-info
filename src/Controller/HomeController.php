@@ -59,7 +59,7 @@ class HomeController extends AbstractController
                 'Het item is toegevoegd'
             );
 
-            return $this->redirectToRoute('add-video');
+            return $this->redirectToRoute('showVideos2');
         }
 
         return $this->renderForm('home/index.html.twig', [

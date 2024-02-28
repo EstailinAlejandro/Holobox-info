@@ -1,6 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <nav class="navbar bg-danger ">
+        <div class="container-fluid">
+            <a class="" href="{{ path('courses', {'id': video.course.branch.id}) }}">
+                <img src="{{ asset('img/return.png') }}" alt="return" class="col-2 ms-2" alt="return">
+            </a>
+
+            <img src="{{ asset('img/logoroc.jpg') }}" alt="Logo" class="col-2" alt="rocmondriaan">
+        </div>
+    </nav>
+
     <div class="container">
         <div class="card rounded-0" style="border: none;">
             <video id="myVideo" class="card-img-top" controls style="width: 100%; height: auto;">
@@ -15,6 +25,10 @@
     </div>
 
     <p class="text-white bg-danger">dsaasdasdasdasd</p>
+
+
+
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

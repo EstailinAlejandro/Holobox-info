@@ -77,7 +77,7 @@ class BrancheController extends AbstractController
                 'Het item is toegevoegd'
             );
 
-            return $this->redirectToRoute('add-video');
+            return $this->redirectToRoute('branche');
         }
 
         return $this->renderForm('home/index.html.twig', [

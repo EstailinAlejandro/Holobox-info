@@ -5,19 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a29e93e4-2f8e-41d9-a4e4-1265bf0a7c8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/branche/img.html.twig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/course/img.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BrancheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BrancheController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Course.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Course.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Video.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Video.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/VideoType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/VideoType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/branche/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/branche/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/branche/insert.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/course/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/course/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/branches.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/branches.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/courses.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/courses.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/home/delete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/delete.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/home/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home/show.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,22 +177,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "EsTatalun",
-    "last_opened_file_path": "C:/Users/SD Student/Documents/GitHub/Holobox-info/templates/course",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;EsTatalun&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/SD Student/Documents/GitHub/Holobox-info/templates/course&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\SD Student\Documents\GitHub\Holobox-info\templates\course" />
@@ -273,6 +269,7 @@
       <workItem from="1708072384720" duration="3389000" />
       <workItem from="1708940889134" duration="8253000" />
       <workItem from="1709033167728" duration="11409000" />
+      <workItem from="1709108256430" duration="6450000" />
     </task>
     <servers />
   </component>
