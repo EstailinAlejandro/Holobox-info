@@ -5,9 +5,10 @@ namespace App\Entity;
 use App\Repository\VideoRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: VideoRepository::class)]
-class Video
+class Video 
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -15,6 +16,9 @@ class Video
     public ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Assert\File(
+        maxSize: "22000M"
+    )]
     public ?string $filename = null;
 
     #[ORM\Column(length: 255)]

@@ -18,7 +18,7 @@ class VideoType extends AbstractType
         $builder
             ->add('filename', FileType::class, [
                 'mapped'=> false,
-             // 'maxSize' => '0'
+//              'maxSize' => '22000'
                 ])
             ->add('name')
             ->add('course', EntityType::class,[
