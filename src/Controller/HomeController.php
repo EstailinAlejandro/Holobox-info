@@ -27,7 +27,7 @@ class HomeController extends AbstractController
     }
 
     //Insert actie voor videos
-                #[Route('/addvideo', name: 'add-video')]
+    #[Route('/addvideo', name: 'add-video')]
     public function showInsert(Request $request, EntityManagerInterface $em): Response
     {
         $video = $em->getRepository(Video::class)->findAll();
@@ -72,16 +72,29 @@ class HomeController extends AbstractController
 
 //Delete statement voor video
     #[Route('/delete/{id}', name: 'delete')]
-    public function delete(VideoRepository $videoRepository,Video $videos): Response
+    public function delete(VideoRepository $videoRepository, Video $video, EntityManagerInterface $em): Response
     {
-        $videoRepository->remove($videos);
+        // Het pad naar de uploadmap ophalen
+        $uploadDirectory = $this->getParameter('kernel.project_dir').'/public/uploads/';
+
+        // Het bestand verwijderen
+        $filename = $video->getFilename();
+        $filePath = $uploadDirectory . $filename;
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+
+        // Het video-object verwijderen uit de database
+        $em->remove($video);
+        $em->flush();
 
         $videos = $videoRepository->findAll();
-        $this->addFlash('danger','Uw video is verwijderd');
+        $this->addFlash('danger', 'Uw video is verwijderd');
         return $this->render('home/delete.html.twig', [
             'files' => $videos
         ]);
     }
+
 
     //Met deze functie OnlyVideo toont die de video zonder twig template te gebruiken op het moment
     #[Route('/Show1video/{id}', name: 'OnlyVideo')]

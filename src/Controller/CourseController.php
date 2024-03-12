@@ -36,6 +36,17 @@ class CourseController extends AbstractController
     #[Route('/course-delete/{id}', name: 'course_delete')]
     public function delete(Course $course, CourseRepository $courseRepository): Response
     {
+        // Het pad naar de uploadmap ophalen
+        $uploadDirectory = $this->getParameter('kernel.project_dir').'/public/img_course/';
+
+        // Het bestand verwijderen
+        $filename = $course ->getImg();
+        $filePath = $uploadDirectory . $filename;
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+
+
         $courseRepository->remove($course);
 
         $course = $courseRepository->findAll();

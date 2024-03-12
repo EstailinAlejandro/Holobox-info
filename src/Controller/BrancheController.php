@@ -36,6 +36,16 @@ class BrancheController extends AbstractController
     #[Route('/branche-delete/{id}', name: 'branche_delete')]
     public function delete(Branche $branche, BrancheRepository $brancheRepository): Response
     {
+        // Het pad naar de uploadmap ophalen
+        $uploadDirectory = $this->getParameter('kernel.project_dir').'/public/img_branche/';
+
+        // Het bestand verwijderen
+        $filename = $branche->getImg();
+        $filePath = $uploadDirectory . $filename;
+        if (file_exists($filePath)) {
+            unlink($filePath);
+        }
+
         $brancheRepository->remove($branche);
 
         $branche = $brancheRepository->findAll();
