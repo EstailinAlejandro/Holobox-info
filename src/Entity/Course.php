@@ -21,8 +21,9 @@ class Course
     #[ORM\ManyToOne(inversedBy: 'courses')]
     public ?Branche $branch = null;
 
-    #[ORM\OneToMany(mappedBy: 'Course', targetEntity: Video::class)]
+    #[ORM\OneToMany(mappedBy: 'course', targetEntity: Video::class, cascade: ["remove"])]
     public Collection $videos;
+
 
     #[ORM\Column(length: 255)]
     public ?string $learning_path = null;

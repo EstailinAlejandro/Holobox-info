@@ -25,7 +25,8 @@ class Video
     public ?string $name = null;
 
     #[ORM\ManyToOne(inversedBy: 'videos')]
-    public ?Course $Course = null;
+    #[ORM\JoinColumn(name: 'course_id', referencedColumnName: 'id')]
+    public ?Course $course = null;
 
 
 
@@ -60,12 +61,12 @@ class Video
 
     public function getCourse(): ?Course
     {
-        return $this->Course;
+        return $this->course;
     }
 
-    public function setCourse(?Course $Course): static
+    public function setCourse(?Course $course): static
     {
-        $this->Course = $Course;
+        $this->course = $course;
 
         return $this;
     }
