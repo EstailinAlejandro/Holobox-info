@@ -20,6 +20,7 @@ class CourseController extends AbstractController
         $objects = $entityManager->getRepository(Course::class)->findAll();
         return $this->render('course/index.html.twig', [
             'courses' => $objects,
+            'none' => "none",
         ]);
     }
 

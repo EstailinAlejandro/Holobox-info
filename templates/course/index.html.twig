@@ -24,6 +24,7 @@
             <th scope="col">start</th>
             <th scope="col">branche</th>
             <th scope="col">image</th>
+            <th scope="col">video name</th>
         </tr>
         </thead>
 
@@ -37,6 +38,17 @@
                 <td>{{ course.start  }}</td>
                 <td>{{ course.branch.name  }}</td>
                 <td>{{  course.img }}</td>
+                <td>{% if course.videos is not empty %}
+
+                        {% for video in course.videos %}
+                            {{ video.name }}
+                        {% endfor %}
+                    {% else %}
+                        <p class="ps-2">-</p>
+                    {% endif %}</td>
+
+
+
                 <td><a href="{{ path('OnlyCourse', {'id': course.id}) }} ">
                         <button class="btn btn-warning">Zie afbeelding</button></a></td>
                 <td><a href="{{ path('course_delete', {'id': course.id}) }} "  onclick="return confirm('Weet u zeker dat u \<{{ course.name }}\> wilt verwijderen?')">
